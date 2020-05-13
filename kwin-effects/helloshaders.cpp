@@ -296,8 +296,9 @@ HelloShadersEffect::paintWindow(KWin::EffectWindow *w, int mask, QRegion region,
 
     const KWin::WindowQuadList qds(data.quads);
     //paint the shadow
-    data.quads = qds.select(KWin::WindowQuadShadow);
-    KWin::effects->paintWindow(w, mask, region, data);
+    //don't draw shadows since it causes ugly edges..
+    //data.quads = qds.select(KWin::WindowQuadShadow);
+    //KWin::effects->paintWindow(w, mask, region, data);
 
     //copy the corner regions
     KWin::GLTexture tex[NTex];
